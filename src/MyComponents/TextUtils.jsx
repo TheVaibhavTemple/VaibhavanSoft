@@ -16,6 +16,10 @@ export default function TextUtils(pro) {
         setInputText(event.target.value);
     } 
 
+    const clearHandler = (event) => {
+        setInputText("");
+    }
+
     const [inputText, setInputText] = useState(demo)    
 
     return (
@@ -25,6 +29,7 @@ export default function TextUtils(pro) {
         <textarea className="form-control form-control-lg mt-3 mb-3" type="text" onChange={handleOnChange} placeholder="Input Text Here" value={inputText}></textarea>
         <button type="submit" onClick={upperCaseHandler} className="btn btn-primary m-2 float-right">Change in UPPERCASE</button>
         <button type="submit" onClick={lowerCaseHandler} className="btn btn-primary m-2 float-right">Change in lowercase</button>
+        <button type="submit" onClick={clearHandler} className="btn btn-danger m-2 float-right">Clear</button>
         </div>
         <h3>Text Summary</h3>
         <h4>Total Charecter : {inputText.length},  Total Words : {inputText.split(' ').length}</h4>
